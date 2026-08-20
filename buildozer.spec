@@ -18,6 +18,6 @@ warn_on_root = 1
 android.accept_sdk_license_agreements = True
 android.api = 33
 android.minapi = 21
-android.ndk = 25b
+android.ndk = 28c
 p4a.branch = stable
 android.arch = arm64-v8a
