@@ -3,13 +3,11 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-22.04
-    container:
-      image: kivy/buildozer:master
     steps:
       - uses: actions/checkout@v4
       - name: Build APK
         run: |
-          buildozer android debug
+          docker run --rm -v ${{ github.workspace }}:/home/user/hostcwd kivy/buildozer:master bash -c "cd /home/user/hostcwd && buildozer android debug"
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
