@@ -12,8 +12,8 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y openjdk-17-jdk zip unzip python3-pip
-          sudo apt install -y python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev libbz2-dev libsqlite3-dev libncursesw5-dev libgdbm-dev liblzma-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libgstreamer1.0-dev
-          pip install --upgrade pip cython==0.29.33 buildozer
+          pip install --upgrade pip
+          pip install cython==0.29.33 buildozer
       - name: Build APK
         run: |
           yes | buildozer android debug
