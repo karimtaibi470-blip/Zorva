@@ -5,7 +5,7 @@ package.domain = com.karim.zorva
 source.dir =.
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
-requirements = python3,kivy
+requirements = python3==3.10.13,kivy==2.2.0
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
@@ -20,4 +20,4 @@ android.api = 33
 android.minapi = 21
 android.ndk = 25b
 p4a.branch = stable
-android.arch = armeabi-v7a
+android.arch = arm64-v8a
