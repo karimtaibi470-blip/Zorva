@@ -5,7 +5,7 @@ package.domain = com.karim.zorva
 source.dir =.
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
-requirements = python3==3.10.13,kivy==2.2.0
+rerequirements = hostpython3==3.10.13,python3==3.10.13,kivy,requests,certifi,charset-normalizer,idna,urllib3
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
