@@ -19,3 +19,5 @@ android.accept_sdk_license_agreements = True
 android.api = 33
 android.minapi = 21
 android.ndk = 25b
+p4a.branch = stable
+android.arch = armeabi-v7a
