@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Python 3.11 & Java 17
         uses: actions/setup-python@v5
         with:
@@ -15,14 +14,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
       - name: Install Dependencies
         run: |
           sudo apt update
           sudo apt install -y zip unzip autoconf libtool pkg-config zlib1g-dev libncurses5-dev cmake libffi-dev libssl-dev
           pip install --upgrade pip
           pip install buildozer==1.5.0 cython==0.29.36
-
       - name: Accept SDK Licenses & Install NDK
         run: |
           mkdir -p $HOME/.buildozer/android/platform/android-sdk/cmdline-tools
@@ -41,7 +38,6 @@ jobs:
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" "ndk;25.1.8937393"
           mkdir -p $ANDROID_HOME/tools/bin
           ln -sf $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager $ANDROID_HOME/tools/bin/sdkmanager
-
       - name: Build APK
         run: |
           rm -rf.buildozer bin
@@ -49,7 +45,6 @@ jobs:
           export ANDROID_HOME=$ANDROID_SDK_ROOT
           export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
           buildozer android debug --verbose
-
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
