@@ -40,7 +40,7 @@ jobs:
           ln -sf $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager $ANDROID_HOME/tools/bin/sdkmanager
       - name: Build APK
         run: |
-          rm -rf.buildozer bin
+          rm -rf .buildozer bin
           export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
           export ANDROID_HOME=$ANDROID_SDK_ROOT
           export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
